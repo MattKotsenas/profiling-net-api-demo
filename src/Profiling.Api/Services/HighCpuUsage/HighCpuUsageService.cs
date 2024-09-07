@@ -12,7 +12,7 @@
         public void Run()
         {
             _logger.LogInformation($"Start Calculating Prime Number");
-            long nthPrime = CalculatePrimeNumber(100000);
+            long nthPrime = CalculatePrimeNumber(1_000_000);
             _logger.LogInformation($"End Calculating Prime Number");
         }
         private long CalculatePrimeNumber(int n)

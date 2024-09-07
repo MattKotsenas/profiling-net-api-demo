@@ -17,5 +17,5 @@ More info about it on my blog post:
 ## Creating the image
 
 ```powershell
-dotnet publish --os linux --arch x64 /t:PublishContainer
+dotnet publish --os linux --arch x64 -t:PublishContainer -p:ContainerImageTag=8.0
 ```
