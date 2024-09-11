@@ -12,7 +12,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\..\tests\http\http-client.env.json" Link="http\http-client.env.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\tests\http\blocking-threads.http" Link="http\blocking-threads.http" />
+    <None Include="..\..\tests\http\high-cpu.http" Link="http\high-cpu.http" />
+    <None Include="..\..\tests\http\memory-leak.http" Link="http\memory-leak.http" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="http\" />
   </ItemGroup>
 
 </Project>
