@@ -1,0 +1,2 @@
+GET {{HostAddress}}/json
+Accept: application/json

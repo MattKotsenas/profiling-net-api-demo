@@ -19,6 +19,7 @@
     <None Include="..\..\tests\http\blocking-threads.http" Link="http\blocking-threads.http" />
     <None Include="..\..\tests\http\high-cpu.http" Link="http\high-cpu.http" />
     <None Include="..\..\tests\http\memory-leak.http" Link="http\memory-leak.http" />
+    <None Include="..\..\tests\http\json.http" Link="http\json.http" />
   </ItemGroup>
 
   <ItemGroup>
