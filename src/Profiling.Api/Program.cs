@@ -1,5 +1,6 @@
 using Profiling.Api.Services.BlockingThreads;
 using Profiling.Api.Services.HighCpuUsage;
+using Profiling.Api.Services.Json;
 using Profiling.Api.Services.MemoryLeak;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IHighCpuUsageService, HighCpuUsageService>();
 builder.Services.AddTransient<IBlockingThreadsService, BlockingThreadsService>();
 builder.Services.AddSingleton<IMemoryLeakService, MemoryLeakService>();
+builder.Services.AddTransient<IJsonService, JsonService>();
 
 var app = builder.Build();
 

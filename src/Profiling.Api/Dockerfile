@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
 # Copy csproj and restore dependencies
@@ -16,7 +16,7 @@ RUN dotnet tool install --tool-path /tools dotnet-trace \
  && dotnet tool install --tool-path /tools dotnet-gcdump
 
 # Build runtime imagedock
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
 # Copy dotnet-tools
 WORKDIR /tools
