@@ -104,14 +104,18 @@ Note the trace's file path (e.g. `/tmp/dotnet_20240907_022946.nettrace`).
 ### 6. View the trace on your local machine
 
 If the pod has `tar` available, you can use `kubectl cp`. However the images built by the dotnet SDK do not. We can
-workaround this by writing the file as a base64 encoded string to stdout, and then converting it back to binary and
-writing it to a file.
+workaround this by writing the file as a base64 encoded string to a file, and then decoding that file into our trace file.
 
 ```powershell
 kubectl exec pod/sample-app -- base64 /tmp/dotnet_20240907_022946.nettrace `
     | Out-String `
-    | %{ [System.Convert]::FromBase64String($_) } `
-    | Set-Content .\dotnet_20240907_022946.nettrace -AsByteStream
+    | Set-Content .\dotnet_20240907_022946.txt
+```
+
+Decode the file
+
+```powershell
+certutil -decode .\dotnet_20240907_022946.txt .\dotnet_20240907_022946.nettrace
 ```
 
 Open the trace in Visual Studio (drag and drop), or use [PerfView](https://github.com/microsoft/perfview). See
