@@ -54,8 +54,8 @@ This will create a new 1 node k8s cluster on your local machine and set the `kub
 Create a docker image called `profiling-api` that contains the web app with performance issues.
 
 ```powershell
-dotnet publish --os linux --arch x64 -t:PublishContainer -p:ContainerImageTag=8.0
-kind load docker-image --name profiling-cluster profiling-api:8.0
+dotnet publish -t:PublishContainer
+kind load docker-image --name profiling-cluster profiling-api:net8.0
 ```
 
 ### 3. Deploy sample app to sample cluster

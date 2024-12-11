@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Docker container">
-    <ContainerFamily>cbl-mariner2.0</ContainerFamily>
     <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+    <ContainerFamily>cbl-mariner2.0</ContainerFamily>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <ContainerImageTag>$(TargetFramework)</ContainerImageTag>
   </PropertyGroup>
 
   <ItemGroup>

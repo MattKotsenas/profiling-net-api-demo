@@ -18,7 +18,7 @@ More info about it on the blog post:
 ## Creating the Docker image
 
 ```powershell
-dotnet publish --os linux --arch x64 -t:PublishContainer -p:ContainerImageTag=8.0
+dotnet publish -t:PublishContainer
 ```
 
 ## Profiling a Kubernetes pod
