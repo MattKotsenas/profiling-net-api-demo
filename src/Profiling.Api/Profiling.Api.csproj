@@ -9,8 +9,9 @@
   <PropertyGroup Label="Docker container">
     <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
     <ContainerFamily>cbl-mariner2.0</ContainerFamily>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <RuntimeIdentifiers>linux-x64;linux-arm64</RuntimeIdentifiers>
     <ContainerImageTag>$(TargetFramework)</ContainerImageTag>
+    <ContainerArchiveOutputPath>$(RepoRoot)/artifacts/containers/</ContainerArchiveOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,5 +32,14 @@
   <ItemGroup>
     <Folder Include="http\" />
   </ItemGroup>
+
+  <!-- BEGIN: These go away when the package ships for real -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.405" GeneratePathProperty="true" />
+  </ItemGroup>
+  <PropertyGroup>
+    <_ContainersTargetsDir>$(PkgMicrosoft_NET_Build_Containers)/build/</_ContainersTargetsDir>
+  </PropertyGroup>
+  <!-- END: These go away when the package ships for real -->
 
 </Project>
