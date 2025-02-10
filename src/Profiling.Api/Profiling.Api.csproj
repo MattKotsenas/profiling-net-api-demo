@@ -35,7 +35,7 @@
 
   <!-- BEGIN: These go away when the package ships for real -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.406" GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.407" GeneratePathProperty="true" />
   </ItemGroup>
   <PropertyGroup>
     <_ContainersTargetsDir>$(PkgMicrosoft_NET_Build_Containers)/build/</_ContainersTargetsDir>
