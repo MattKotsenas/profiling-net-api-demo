@@ -12,6 +12,7 @@
     <RuntimeIdentifiers>linux-x64;linux-arm64</RuntimeIdentifiers>
     <ContainerImageTag>$(TargetFramework)</ContainerImageTag>
     <ContainerArchiveOutputPath>$(RepoRoot)/artifacts/containers/</ContainerArchiveOutputPath>
+    <ContainerImageFormat>OCI</ContainerImageFormat><!-- NOTE: Remove when https://github.com/dotnet/sdk/pull/47398 is released -->
   </PropertyGroup>
 
   <ItemGroup>
